@@ -43,22 +43,6 @@ class PerpustakaanMini {
         }
     }
 
-    void cariBuku(String judul) {
-        boolean found = false;
-        for (Buku buku : tumpukanBuku) {
-            if (buku.judul.equalsIgnoreCase(judul)) {
-                found = true;
-                break;
-            }
-        }
-        if (found) {
-            System.out.println("Buku \"" + judul + "\" ada pada tumpukan.");
-        } else {
-            System.out.println("Buku \"" + judul + "\" tidak ada pada tumpukan.");
-        }
-    }
-}
-
 public class TumpukanBukuPerpustakaan {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -80,11 +64,10 @@ public class TumpukanBukuPerpustakaan {
             System.out.println("1. Tambah Buku ke Tumpukan");
             System.out.println("2. Ambil Buku Teratas");
             System.out.println("3. Lihat Tumpukan Buku");
-            System.out.println("4. Cari bukuk");
-            System.out.println("5. Keluar");
+            System.out.println("4. Keluar");
             System.out.print("Pilih: ");
             pilihan = scanner.nextInt();
-            scanner.nextLine(); // Clear newline
+            scanner.nextLine(); 
 
             switch (pilihan) {
                 case 1:
@@ -99,16 +82,11 @@ public class TumpukanBukuPerpustakaan {
                     perpus.lihatTumpukan();
                     break;
                 case 4:
-                    System.out.print("Masukkan judul buku yang ingin dicari: ");
-                    String cariJudulBuku = scanner.nextLine();
-                    perpus.cariBuku(cariJudulBuku);
-                    break;
-                case 5:
                     System.out.println("Keluar dari program.");
                     break;
                 default:
                     System.out.println("Pilihan tidak valid.");
             }
-        } while (pilihan != 5);
+        } while (pilihan != 4);
     }
 }
